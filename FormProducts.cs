@@ -105,7 +105,6 @@ namespace shoeProject
                 }
             }
 
-            if(product.Discount )
         }
 
         private string FormatProductInfo(Product product)
