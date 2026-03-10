@@ -30,9 +30,9 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelTop = new Panel();
-            dgvProducts = new DataGridView();
-            btnLogin = new Button();
             lblUserName = new Label();
+            btnLogin = new Button();
+            dgvProducts = new DataGridView();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
@@ -47,6 +47,30 @@
             panelTop.Padding = new Padding(0, 0, 0, 10);
             panelTop.Size = new Size(962, 40);
             panelTop.TabIndex = 0;
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Dock = DockStyle.Right;
+            lblUserName.Location = new Point(732, 0);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new Size(60, 22);
+            lblUserName.TabIndex = 6;
+            lblUserName.Text = "label1";
+            lblUserName.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.MediumSpringGreen;
+            btnLogin.Dock = DockStyle.Right;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(792, 0);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(170, 30);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "Войти";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // dgvProducts
             // 
@@ -75,30 +99,6 @@
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(962, 593);
             dgvProducts.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.MediumSpringGreen;
-            btnLogin.Dock = DockStyle.Right;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Location = new Point(792, 0);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(170, 30);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Войти";
-            btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // lblUserName
-            // 
-            lblUserName.AutoSize = true;
-            lblUserName.Dock = DockStyle.Right;
-            lblUserName.Location = new Point(732, 0);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(60, 22);
-            lblUserName.TabIndex = 6;
-            lblUserName.Text = "label1";
-            lblUserName.TextAlign = ContentAlignment.MiddleRight;
             // 
             // FormProducts
             // 
