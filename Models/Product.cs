@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace shoeProject.Models;
+﻿namespace shoeProject.Models;
 
 public partial class Product
 {
@@ -29,15 +26,15 @@ public partial class Product
 
     public string? PhotoUrl { get; set; }
 
-    public virtual Category IdCategoryNavigation { get; set; } = null!;
+    public virtual Category Category { get; set; } = null!;
 
-    public virtual Manufacturer IdManufacturerNavigation { get; set; } = null!;
+    public virtual Manufacturer Manufacturer { get; set; } = null!;
 
-    public virtual Measure IdMeasureNavigation { get; set; } = null!;
+    public virtual Measure Measure { get; set; } = null!;
 
-    public virtual Supplier IdSupplierNavigation { get; set; } = null!;
+    public virtual Supplier Supplier { get; set; } = null!;
 
-    public virtual ProductType IdTypeNavigation { get; set; } = null!;
+    public virtual ProductType Type { get; set; } = null!;
 
     public virtual ICollection<ProductsOrder> ProductsOrders { get; set; } = new List<ProductsOrder>();
 }
