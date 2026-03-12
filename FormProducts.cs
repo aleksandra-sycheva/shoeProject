@@ -52,7 +52,7 @@ namespace shoeProject
                         .Include(i => i.Manufacturer)
                         .Include(i => i.Supplier)
                         .Include(i => i.Measure)
-                        .Include(i=> i.Type)
+                        .Include(i => i.Type)
                         .ToList();
 
                     dgvProducts.SuspendLayout();
@@ -144,6 +144,14 @@ namespace shoeProject
             return Resources.picture;
         }
 
+        private void BtnOrders_Click(object sender, EventArgs e)
+        {
+            using (var formOrders = new FormOrders(CurrentUser, IsGuest))
+            {
+                formOrders.ShowDialog();
+            }
+        }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -153,6 +161,15 @@ namespace shoeProject
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+        }
+
+        private void BtnFormsOrder_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            using (var formOrders = new FormOrders(CurrentUser, IsGuest))
+            {
+                formOrders.ShowDialog();
+            }
         }
     }
 }
