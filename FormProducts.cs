@@ -1,13 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using shoeProject.Models;
 using shoeProject.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace shoeProject
 {
@@ -96,13 +89,21 @@ namespace shoeProject
                 row.DefaultCellStyle.ForeColor = Color.White;
             }
 
-            if(product.CointInStock <= 0)
+            if (product.CointInStock <= 0)
             {
                 row.DefaultCellStyle.BackColor = Color.LightBlue;
                 if (product.Discount <= 15)
                 {
                     row.DefaultCellStyle.ForeColor = Color.Black;
                 }
+            }
+            if (product.Discount > 0)
+            {
+                row.Cells["colDiscount"].Style.ForeColor = Color.Red;
+                row.Cells["colDiscount"].Style.Font = new Font(
+                    "Times New Roman",
+                    12,
+                    FontStyle.Bold);
             }
 
         }
@@ -113,7 +114,7 @@ namespace shoeProject
 
             if (product.Discount > 0)
             {
-                decimal finalPrace = product.Price * (100 - product.Discount)/100;
+                decimal finalPrace = product.Price * (100 - product.Discount) / 100;
                 priceText = $"Цена: {product.Price:C} -> {finalPrace:C}";
             }
             else
@@ -132,12 +133,23 @@ namespace shoeProject
 
         private Image LoadProductImage(string? photoUrl)
         {
-            if(!String.IsNullOrEmpty(photoUrl) && System.IO.File.Exists(photoUrl))
+            if (!String.IsNullOrEmpty(photoUrl) && System.IO.File.Exists(photoUrl))
             {
-               return Image.FromFile(photoUrl);
+                return Image.FromFile(photoUrl);
             }
 
             return Resources.picture;
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
         }
     }
 }

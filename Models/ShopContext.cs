@@ -139,7 +139,7 @@ public partial class ShopContext : DbContext
                 .HasForeignKey(d => d.IdManufacturer)
                 .HasConstraintName("products_id_manufacturer_fkey");
 
-            entity.HasOne(d => d.IdMeasureNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.Measure).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdMeasure)
                 .HasConstraintName("products_id_measure_fkey");
 
@@ -173,7 +173,7 @@ public partial class ShopContext : DbContext
             entity.Property(e => e.IdProduct).HasColumnName("id_product");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.ProductsOrders)
+            entity.HasOne(d => d.Order).WithMany(p => p.ProductsOrders)
                 .HasForeignKey(d => d.IdOrder)
                 .HasConstraintName("products_orders_id_order_fkey");
 
@@ -226,7 +226,7 @@ public partial class ShopContext : DbContext
             entity.Property(e => e.MiddleName).HasColumnName("middle_name");
             entity.Property(e => e.Pass).HasColumnName("pass");
 
-            entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .HasConstraintName("users_id_role_fkey");
         });
