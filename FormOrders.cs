@@ -92,9 +92,9 @@ namespace shoeProject
             int itemsCount = order.ProductsOrders.Count;
             decimal totalSum = order.ProductsOrders.Sum(po => po.Quantity * po.Product.Price);
 
-            string datesText = $"Дата заказа: {order.OrderDate} | Доставка: {order.DeliveryDate}";
-            string detailsText = $"Код: {order.Code} | Адрес: {order.DeliveryPoint.DeliveryAddress}";
-            string totalsText = $"Товаров: {itemsCount}, шт: {totalQuantity}, сумма: {totalSum:C}";
+            string datesText = $"Дата заказа: {order.OrderDate}" + Environment.NewLine + $"Доставка: {order.DeliveryDate}";
+            string detailsText = $"Код: {order.Code}" + Environment.NewLine + $"Адрес: {order.DeliveryPoint.DeliveryAddress}";
+            string totalsText = $"Товаров: {itemsCount}" + Environment.NewLine +  $"шт: {totalQuantity}" + Environment.NewLine + $"сумма: {totalSum:C}";
 
             return $"{datesText}{Environment.NewLine}{detailsText}{Environment.NewLine}{totalsText}";
         }
